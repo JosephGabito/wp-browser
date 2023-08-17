@@ -274,7 +274,9 @@ class WPLoader extends Module
     {
         if (defined('ABSPATH') || self::$didInit) {
             // Already initialized.
-            return [];
+            return [
+                'skipWordPressInstall' => true
+            ];
         }
 
         self::$didInit = true;
